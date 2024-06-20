@@ -1,12 +1,19 @@
 #!/bin/bash
 
-# Find Python executable (adjust as needed for your Python installation)
-PYTHON="python"
+# Set Python executable and pip
+PYTHON="python3.11"
 PIP="pip"
 
 # Check if Python and pip are available
-command -v $PYTHON >/dev/null 2>&1 || { echo >&2 "Python is not installed or not found. Aborting."; exit 1; }
-command -v $PIP >/dev/null 2>&1 || { echo >&2 "pip is not installed or not found. Aborting."; exit 1; }
+if ! command -v $PYTHON &> /dev/null; then
+    echo "Python 3.11 is not installed or not found. Aborting."
+    exit 1
+fi
+
+if ! command -v $PIP &> /dev/null; then
+    echo "pip is not installed or not found. Aborting."
+    exit 1
+fi
 
 # Install dependencies
 $PIP install -r requirements.txt
