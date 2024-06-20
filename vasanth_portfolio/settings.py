@@ -63,18 +63,18 @@ WSGI_APPLICATION = 'vasanth_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': 'railway',
-		'USER': 'postgres',
-		'PASSWORD': 'fjqeAcEVDeGPrbqjKXqpxSznDqmSHdWN',
-		'HOST':'viaduct.proxy.rlwy.net',
-		'PORT':'54664',
-        
-	}
-}
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'railway'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'fjqeAcEVDeGPrbqjKXqpxSznDqmSHdWN'),
+        'HOST': os.getenv('DB_HOST', 'viaduct.proxy.rlwy.net'),
+        'PORT': os.getenv('DB_PORT', '54664'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
