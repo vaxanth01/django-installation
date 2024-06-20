@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Set Python executable and pip
-PYTHON="python3.11"
+PYTHON="python"
 PIP="pip"
 
 # Check if Python and pip are available
 if ! command -v $PYTHON &> /dev/null; then
-    echo "Python 3.11 is not installed or not found. Aborting."
+    echo "Python is not installed or not found. Aborting."
     exit 1
 fi
 
