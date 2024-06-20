@@ -2,11 +2,9 @@
     "version": 2,
     "builds": [
       {
-        "src": "vasanth_portfolio/wsgi.py",
+        "src": "django-installation/wsgi.py",
         "use": "@vercel/python",
-        "config": {
-          "runtime": "python@3.11"
-        }
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
       {
         "src": "build_files.sh",
@@ -23,12 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "vasanth_portfolio/wsgi.py"
+        "dest": "django-installation/wsgi.py"
       }
-    ],
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "django-installation.settings",
-      "DATABASE_URL": "@postgresql://postgres:fjqeAcEVDeGPrbqjKXqpxSznDqmSHdWN@viaduct.proxy.rlwy.net:54664/railway"
-    }
+    ]
   }
-  
