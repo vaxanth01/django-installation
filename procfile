@@ -1,1 +1,0 @@
-web: gunicorn vasanth_portfolio.wsgi --log-file -
